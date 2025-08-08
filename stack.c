@@ -4,6 +4,34 @@
 int stack[N];
 int top = -1;
 
+void push();
+void pop();
+void peek();
+void display();
+
+int main(){
+    int ch;
+    do{
+        printf("\nEnter choice\n1. Push\n2. Pop\n3. Peek\n4. Display\n5. Exit");
+        scanf("%d",&ch);
+        switch(ch){
+            case 1: push();
+            break;
+            case 2: pop();
+            break;
+            case 3: peek();
+            break;
+            case 4: display();
+            break;
+            case 5: ch = 0;
+            break;
+            default: printf("\ninvalid choice");
+        }
+    }while (ch!=0);
+    return 0;
+}
+
+
 void push(){
     int x;
     printf("\nEnter the data to push\n");
@@ -41,24 +69,4 @@ void display(){
     for(i = top;i>=0;i--){
 printf("%d ",stack[i]);
     }
-}
-
-int main(){
-    int ch;
-    do{
-        printf("\nEnter choice\n1. Push\n2. Pop\n3. Peek\n4. Display\n");
-        scanf("%d",&ch);
-        switch(ch){
-            case 1: push();
-            break;
-            case 2: pop();
-            break;
-            case 3: peek();
-            break;
-            case 4: display();
-            break;
-            default: printf("\ninvalid choice");
-        }
-    }while (ch!=0);
-    return 0;
 }
